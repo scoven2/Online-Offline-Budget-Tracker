@@ -15,7 +15,8 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGO_URI || "mongodb://localhost/budget", {
+let db = mongoose.connect(
+  process.env.MONGO_URI || "mongodb://localhost/budget", {
   useNewUrlParser: true,
   useFindAndModify: false
 });
@@ -26,5 +27,7 @@ app.use(require("./routes/api.js"));
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
 });
+
+module.exports = db;
 
 //add database button, add for project, connect button, 
