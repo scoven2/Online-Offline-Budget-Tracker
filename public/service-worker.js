@@ -49,7 +49,7 @@ self.addEventListener("fetch", event => {
             .then(cache => {
                 return fetch(event.request)
                 .then(response => {
-                    if (response.statuus === 200) {
+                    if (response.status === 200) {
                         cache.put(event.request.url, response.clone());
                     }
                     return response;
