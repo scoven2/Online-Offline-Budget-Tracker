@@ -13,7 +13,7 @@ request.onsuccess = function(event) {
     }
 };
 
-request.onerror - function(event) {
+request.onerror = function(event) {
     console.log("Oh jeez... " + event.target.errorCode);
 };
 
